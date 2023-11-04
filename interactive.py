@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import readline
 import tensorflow as tf
 
 @tf.keras.utils.register_keras_serializable(package='Custom', name=None)
