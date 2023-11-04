@@ -13,4 +13,10 @@ with tf.keras.utils.CustomObjectScope({'text_standardizer': text_standardizer}):
     model.summary()
 
     while True:
-        print(model.predict([input('> ')]))
+        inp = [i.strip() for i in input('> ').split('.')]
+        while "" in inp:
+            inp.remove("")
+        output = model.predict(inp)
+        score = sum(output) / len(output)
+        print(["UwU" if i > 0.5 else "Normal" for i in output])
+        print("Final judgement:", "UwU" if score > 0.5 else "Normal")
