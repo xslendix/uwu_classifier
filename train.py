@@ -141,5 +141,3 @@ print(accuracy)
 print('Saving model')
 export_model.save('final_model', save_format='tf')
 
-while True:
-    export_model.predict([input('> ')])
